@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table of Powers</title>
+    
+    <script>
+        function createTOP() {
+            let nbr = $("#userInt").val();
+
+            let tableBody="";
+            $('#powRows').empty();
+                for (let i =1; i<= nbr; i++){
+                    let squared = i*i; 
+                    let cubed = squared*i;
+                    let powRow = "<tr><td>" +i+ "</td><td>" +squared+"</td><td>"+cubed+"</td></tr>";
+                    tableBody += powRow;
+        }
+            $("#powRows").append(tableBody);       
+        }
+    </script>
+</head>
+<body>
+    <h1>Table of Powers</h1>
+    <div>
+        <label for= "userInt">Enter an integer:</label>
+        <input type="text" id="userInt" name="userInt">
+    </div>
+</body>
+</html>
